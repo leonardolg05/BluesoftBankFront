@@ -9,7 +9,7 @@ import { TransactionFormComponent } from '../../../core/components/transaction-f
   imports: [
     CommonModule,
     TransactionFormComponent,
-    AccountRoutingModule  // Importa AccountRoutingModule en este módulo
+    AccountRoutingModule
   ],
   exports: [AccountListComponent]
 })

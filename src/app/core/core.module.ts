@@ -1,15 +1,13 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { ReportsComponent } from './components/reports.component';
 import { throwIfAlreadyLoaded } from './guards/module-import-guard';
+import { AccountDetailsComponent } from '../features/accounts/components/account-details.component';
 
 @NgModule({
-  imports: [
-    HttpClientModule, // Permite que los servicios que hacen solicitudes HTTP estén disponibles en la aplicación
-  ],
-  providers: [
-    // Registrar servicios que necesitan estar disponibles en toda la aplicación
-    // por ejemplo: AccountService, AuthService, etc.
-  ],
+  declarations: [ReportsComponent,AccountDetailsComponent ],
+  exports: [ReportsComponent, AccountDetailsComponent ], // Exportación para que otros módulos puedan usarlo
+  imports: [CommonModule],
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {

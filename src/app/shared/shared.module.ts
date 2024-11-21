@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AccountListComponent } from '../features/accounts/components/account-list.component';
-import { AccountRoutingModule } from '../account-routing.module';   
+import { AccountRoutingModule } from '../features/accounts/account-routing.module';   
 
 @NgModule({
   declarations: [AccountListComponent],

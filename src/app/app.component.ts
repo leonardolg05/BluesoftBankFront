@@ -1,19 +1,29 @@
 import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { AccountModule } from './features/accounts/module/account.module';
+import { RouterModule } from '@angular/router';
+import { DashboardComponent } from './features/dashboard/dashboard/components/dashboard.component';
 import { AccountDetailsComponent } from './features/accounts/components/account-details.component';
-import { TransactionFormComponent } from './core/components/transaction-form.component';
-import { TransactionHistoryComponent } from './core/components/transaction-history.component';
+import { TransactionFormComponent } from './features/transactions/components/transaction-form.component';
+import { TransactionHistoryComponent } from './features/transactions/components/transaction-history.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgFor, AccountModule, AccountDetailsComponent, TransactionHistoryComponent,TransactionFormComponent],
+  imports: [RouterModule, NgFor, DashboardComponent, AccountDetailsComponent, TransactionFormComponent, TransactionHistoryComponent], 
   templateUrl: './app.component.html',
   styleUrl: './app.component.less'
 })
 export class AppComponent {
+  options = [
+    { title: 'Consultar el saldo de la cuenta', route: '' },
+    { title: 'Consultar los movimientos más recientes', route: "/accounts" },
+    { title: 'Generar extractos mensuales', route: "/dashboard" }
+  ];
+
+
+
+
+
   currentAccount = {
     type: 'Savings',
     balance: 5000,

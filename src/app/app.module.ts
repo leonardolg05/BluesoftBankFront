@@ -1,25 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CoreModule } from './core/core.module';
-import { AccountModule } from './features/accounts/module/account.module';
-import { TransactionFormComponent } from './core/components/transaction-form.component';
-import { FormsModule } from '@angular/forms';
-import { TransactionHistoryComponent } from './core/components/transaction-history.component';
+import { TransactionFormComponent } from './features/transactions/components/transaction-form.component';
+import { AccountListComponent } from './features/accounts/components/account-list.component';
+import { DashboardComponent } from './features/dashboard/dashboard/components/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AccountListComponent,
     TransactionFormComponent,
-    TransactionHistoryComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    CoreModule,
-    AccountModule,
-    FormsModule
+    AppRoutingModule // Asegúrate de importar el módulo de enrutamiento aquí
   ],
   providers: [],
   bootstrap: [AppComponent]

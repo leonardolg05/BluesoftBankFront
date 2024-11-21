@@ -1,11 +1,9 @@
-import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 
 @Component({
   selector: 'app-account-details',
-  standalone: true,
-  imports:[CommonModule ],
+  standalone:true,
   styles: `.account-detail-card {
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -46,9 +44,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   
   template: `
     <div class="account-detail-card">
-      <h2>Detalla Cuenta Details</h2>
-      <p><strong>Tipo Cuenta:</strong> {{ account.type }}</p>
-      <p><strong>Balance:</strong> {{ account.balance | currency }}</p>
+      <h2>Detalle de Cuenta
+      </h2>
       <div class="actions">
         <button (click)="checkBalance()">Check Balance</button>
       <!--  <button (click)="viewTransactions()">Ver Movimientos</button>
@@ -59,13 +56,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   `
 })
 export class AccountDetailsComponent {
-  @Input() account!: { type: string; balance: number; };
+ @Input() account!: { type: string; balance: number; };
   @Output() view = new EventEmitter<void>();
   @Output() depositAction = new EventEmitter<void>();
   @Output() withdrawAction = new EventEmitter<void>();
 
   checkBalance() {
-    alert(`The current balance is ${this.account.type}`);
   }
   viewTransactions() {
     this.view.emit();
